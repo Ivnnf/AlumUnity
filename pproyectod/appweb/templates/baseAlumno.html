@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Alumno</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'imagenes/logoInicio.jpg' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- SweetAlert CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/iconos.js' %}"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+    </style>
+    <script>
+        function likePost(event, postId) {
+            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+            fetch(`/like/${postId}/`, {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector(`#like-count-${postId}`).innerText = `${data.total_likes} likes`;
+                // Actualizar el estado del checkbox
+                const checkbox = document.querySelector(`#like-checkbox-${postId}`);
+                checkbox.checked = !checkbox.checked;
+            });
+        }
+    </script>
+    
+</head>
+
+<body class="alumno">
+<div class="wrapper">
+    <header>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-10">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark" id="barranav">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link mr-3" aria-current="page">Bienvenido/a {{ user.username | upper }}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="{% url 'homeAlumno' %}">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="{% url 'postAlumno'%}" aria-current="page" >Crear Publicacion</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="{% url 'publicaciones' %}">Publicaciones</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="{% url 'listarBiblioteca' %}">Ver Biblioteca</a>
+                                    </li>
+                                </ul>
+                                <div class="nav-item">
+                                    <button type="button" class="btn btn-primary">
+                                        Notificaciones <span class="badge text-bg-secondary">20</span>
+                                    </button>
+                                </div>
+                                <div class="container15">
+                                    <form action="{% url 'logout' %}" method="post">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn-15">Cerrar sesión</button>
+                                    </form>
+                                </div>  
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="mt-5 pt-3">
+        <div id="contenido4">
+            {% block contenido4 %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <!-- Footer Block -->
+    <footer class="bg-custom-color text-center footerLogin p-1 pb-0" style="margin-top: -55px;">
+        <div class="text-center p-3">
+            © 2023–2024 Company MMT, Inc.
+        </div>
+        <div class="container p-0 pb-0">
+            <section class="mb-4">
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #333333;" href="#!" role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+            </section>
+        </div>
+    </footer>
+    <!-- End of Footer Block -->
+</div>
+
+<!-- Including the JavaScript file -->
+
+<script src="{% static 'js/mdb.min.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+</html>

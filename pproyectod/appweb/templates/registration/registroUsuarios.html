@@ -1,0 +1,53 @@
+{% extends 'baseContacto.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block contenido6 %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-8" style="margin: auto; margin-top: -40px">
+      <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster" style="margin: auto; margin-top: 10px">
+        <div class="wheel"></div>
+        <div class="hamster">
+            <div class="hamster__body">
+                <div class="hamster__head">
+                    <div class="hamster__ear"></div>
+                    <div class="hamster__eye"></div>
+                    <div class="hamster__nose"></div>
+                </div>
+                <div class="hamster__limb hamster__limb--fr"></div>
+                <div class="hamster__limb hamster__limb--fl"></div>
+                <div class="hamster__limb hamster__limb--br"></div>
+                <div class="hamster__limb hamster__limb--bl"></div>
+                <div class="hamster__tail"></div>
+            </div>
+        </div>
+        <div class="spoke"></div>
+    </div>
+      <div class="card">
+        <div class="card-header text-center formularioColor">
+          Registro
+        </div>
+        <div class="card-body formularioColor">
+          {{mensaje}}
+          <form class="row " id="registroForm" action="" method="POST">
+            {% csrf_token %}
+            {{ formAl | crispy }}
+            <div class="col-12">
+              <button type="submit"  class="btn-20">Registrarse</button>
+              <button class="btn-21"><a   href="{% url 'login' %}">Inicia sesión</a></button>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

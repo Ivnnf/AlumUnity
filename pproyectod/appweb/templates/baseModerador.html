@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>Moderador</title>
+    <link rel="icon" type="image/x-icon" href="{% static '../static/imagenes/logoInicio.jpg' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
+    {% load static %}
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '../static/css/estilos.css' %}">
+    <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+    <style>
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: rgb(252, 252, 252);
+        }
+        body {
+            background-color: #524e3f;
+        }
+        .navbar-custom {
+            background-color: #343a40;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'homeModerador' %}">
+                <img src="{% static '../static/imagenes/logoInicio.jpg' %}" class="d-block w-100 rounded-circle" style="width: 50px; height: 50px;">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page">Bienvenido/a {{ user.username | upper }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="{% url 'homeModerador' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="{% url 'moderar_publicaciones' %}">moderar publicaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="{% url 'gestionar_contactos' %}">Gestionar Contacto </a>
+                    </li>
+                    
+                </ul>
+                <div class="container15">
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-15">Cerrar sesión</button>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    
+        {% block contenido5 %}
+        {% endblock %}
+    
+</main>
+<!-- Footer Block -->
+<footer class="bg-custom-color text-center footerLogin p-1 pb-0" style="margin-top: -55px;">
+    <div class="text-center p-3">
+        © 2023–2024 Company MMT, Inc.
+    </div>
+    <div class="container p-0 pb-0">
+        <section class="mb-4">
+            <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#!" role="button">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button">
+                <i class="fab fa-google"></i>
+            </a>
+            <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #333333;" href="#!" role="button">
+                <i class="fab fa-github"></i>
+            </a>
+        </section>
+    </div>
+</footer>
+<!-- End of Footer Block -->
+</div>
+
+<!-- Including the JavaScript file -->
+<script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+<script src="{% static 'js/mdb.min.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+</html>

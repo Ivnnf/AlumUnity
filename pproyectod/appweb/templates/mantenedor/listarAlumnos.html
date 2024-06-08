@@ -1,0 +1,83 @@
+{% extends 'baseAdmin.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido3 %}
+
+<script>
+    function eliminarusuario(rut_Usuario)
+    {
+    Swal.fire({
+        "title": "Advertencia",
+        "text": "¿Esta seguro que desea eliminar a un Usuario?",
+        "icon": "question",
+        "showCancelButton": true,
+        "cancelButtonText": "No, cancelar",
+        "confirmButtonText":"Si, eliminar"
+    }).then(function(result){
+
+        if(result.isConfirmed)
+        {
+        window.location.href="/eliminar_usuario/"+rut_Usuario+"/";
+        }
+
+    })
+    }
+</script>
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="mt-4">Lista de Alumnos</h2>  
+    </div>
+
+
+<br><br>
+<table class="table">
+<thead class="text-light">
+        <tr>
+        <th scope="col" >Rut</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">correo</th>
+        <th scope="col">Acciones</th>
+
+    
+        </tr>
+    </thead>
+    <tbody class="text-light">
+        {% for p in usuarios %}
+    <tr>
+        <th scope="row">{{p.rut_Usuario}}</th>
+        <td>{{p.nombre_Usuario}}</td>
+        <td>{{p.apellido_Usuario}}</td>
+        <td>{{p.correo}}</td>
+        <td>
+            <div class="d-flex gap-2">
+                <a href="{% url 'modificarAlumno' p.rut_Usuario %}" class="">
+                    <button class="btn-12">
+                        Modificar
+                    </button>
+                </a>
+                <button type="button" class="btn-14" onclick="eliminarusuario('{{ p.rut_Usuario }}')">
+                    <span class="btn-14__text">Delete</span>
+                    <span class="btn-14__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="512" viewBox="0 0 512 512" height="512" class="svg">
+                            <path style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320"></path>
+                            <line y2="112" y1="112" x2="432" x1="80" style="stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line>
+                            <path style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40"></path>
+                            <line y2="400" y1="176" x2="256" x1="256" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line>
+                            <line y2="400" y1="176" x2="192" x1="184" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line>
+                            <line y2="400" y1="176" x2="320" x1="328" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </td>
+        
+        </tr>
+        {% endfor %}
+
+    </tbody>
+    </table>
+</div>
+
+{% endblock %}

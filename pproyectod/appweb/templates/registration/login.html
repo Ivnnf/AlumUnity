@@ -1,0 +1,100 @@
+{% extends "baseLogin.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block contenido2 %}
+
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+            
+                        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+                        <div class="card bg-glass">
+                            
+                            <div class="card-body px-4 py-5 px-md-5">
+                                <form class="login" id="formularioLogin" action="" method="POST">
+                                    {% csrf_token %}
+                                    {{ form|crispy }}
+                                    <button data-mdb-button-init data-mdb-ripple-init
+                                        class="btnLogin" type="submit">Inicia
+                                        sesión</button>
+                                </form><br>
+                                <p class="small mb-0 pb-lg-1"><a class="text-success-50 fw-bold" href="{% url 'password_reset' %}">Olvidaste tu
+                                        Contraseña?</a>
+                                </p>
+                                <div>
+                                    <p class="mt-5 text-success">No tienes cuenta?<a href="{% url 'registroUsuarios' %}"
+                                            class="text-success-50 fw-bold"> Registrate aqui </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock %}     
+
+<!--ACA ESTA TODO LO QUE CONTIENE EL CUADRO NEGRO DEL INICIO DE SESIÓN
+<div class="container py-5 h-100 " style="margin-top: -31px;">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-3 text-center">
+
+                    <div class="mb-md-5 mt-md-4 pb-3 text-center">
+                        
+                        <h2 class="fw-bold mb-2 text-uppercase">Inicia sesión</h2>
+                        <img src="{% static '../static/imagenes/logoInicio.jpg' %}" class="img-fluid rounded-circle"
+                            style="max-width: 100px; margin-top: 10px;"> 
+                        <form class="login" id="formularioLogin" action="" method="POST">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5"
+                                type="submit">Inicia sesión</button>
+                        </form>
+                        <p class="small mb-0 pb-lg-1"><a class="text-white-50" href="#!">Olvidaste tu Contraseña?</a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="mt-5">No tienes cuenta?<a href="{% url 'registroUsuarios' %}"
+                                class="text-white-50 fw-bold"> Registrate aqui </a>
+                        </p>
+                    </div>
+                    <p class="mt-1"><a href="{% url 'contacto' %}" class="text-white-50 fw-bold"> Contactanos </a>
+                    </p>
+
+                <div>
+                        <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#subirLibros">Contactanos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ACA ESTA TODO LO QUE CONTIENE EL CUADRO NEGRO DEL INICIO DE SESIÓN -->
+
+
+<!-- Modal para subir Libros 
+<div class="modal fade" id="subirLibros" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <h5 class="modal-title">Formulario De Contacto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container mt-5">
+                    Formulario de contacto 
+                    <form method="post" action="{% url 'contacto' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form_contacto | crispy }}
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+

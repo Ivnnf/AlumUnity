@@ -1,0 +1,26 @@
+{% extends 'baseAlumno.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido4 %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-4 d-flex justify-content-center align-items-center">
+            <a href="{% url 'homeAlumno' %}">
+                <img src="{% static '../static/imagenes/iconoGrupo.jpg' %}" class="d-block w-50 rounded-circle" style="margin-top: 20px; width: 100px">
+            </a>
+           
+            <button type="button" class="btn btn-success">Buscar Equipo</button>
+            <a href="{% url 'crearEquipo' %}" class="btn btn-success">Crear Equipo</a>
+            <a href="{% url 'chat' %}">
+                <button type="button" class="btn btn-success">Chat</button>
+            </a>
+        </div>
+    </div>
+
+    <span class="border border-primary"></span>
+
+</div>
+
+{% endblock %}

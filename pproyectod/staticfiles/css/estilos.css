@@ -1,0 +1,165 @@
+/* Estilos por defecto para móviles */
+body {
+    background: linear-gradient(to right, #1e3c72, #2a5298, #3b5998, #4b79a1, #5a89b5, #6b9bc3, #7bb0d6, #8cc6e8); /* Gradiente con múltiples tonos de azul */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2em;
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
+
+/* Estilos para desktops */
+@media (min-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1440px) {
+    .container {
+        width: 60%;
+    }
+}
+
+/* Flexbox para el header */
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    header .container {
+        flex-direction: row;
+    }
+}
+
+/* Estilos específicos para el pie de página */
+footer .container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: rgb(252, 252, 252);
+}
+
+/* Estilos para el login */
+body.login {
+    text-align: center;
+    background-color: rgba(11, 61, 197, 0.785);
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-item .nav-link {
+    color: #22abbd;
+}
+
+/* Estilos para las imágenes de la clase card-img-Alum */
+.card-img-Alum {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Fondo personalizado */
+.bg-custom-color {
+    background-color: rgba(67, 105, 211, 0.785);
+}
+
+/* Estilos específicos para la página de administrador */
+body.admin {
+    background-color: #2661ce;
+}
+
+/* Estilos específicos para la página de alumno */
+body.alumno {
+    background-color: #524e3f;
+}
+
+/* Para asegurarse de que el navbar está fijo en la parte superior */
+.navbar {
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+}
+
+/* Estilos adicionales para el contenido y el pie de página */
+main {
+    margin-top: 5rem;
+}
+
+footer {
+    margin-top: 5rem;
+}
+
+/* Estilos para el chat */
+.chat-container {
+    display: flex;
+    height: calc(100vh - 5rem); /* Ajusta según el margen superior del main */
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+}
+
+.chat-content {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f2f5; /* Fondo del contenido del chat */
+}
+
+.message-list {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Desplazamiento para la lista de mensajes */
+}
+
+.message-input {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.custom-modal {
+    background-color: #0d3f70; /* COLOR DEL MODAL AL SUBIR UN LIBRO */
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
+
+.footerLogin {
+    background: linear-gradient(to right, #1e3c72, #2a5298, #3b5998, #4b79a1, #5a89b5, #6b9bc3, #7bb0d6, #8cc6e8); /* Gradiente con múltiples tonos de azul */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}    
+
+.formularioColor{
+    background: linear-gradient(to right, #1e3c72, #2a5298, #3b5998, #4b79a1, #5a89b5, #6b9bc3, #7bb0d6, #8cc6e8); /* Gradiente con múltiples tonos de azul */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}

@@ -1,0 +1,58 @@
+{% extends 'baseAdmin.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido3 %}
+
+
+<!--<div>
+    <div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">   
+            <div class="text-center">
+                <P>REGISTRO DE USUARIOS</P>
+                <form class="row" id="registroForm" action="" method="POST" >
+    
+                    {% csrf_token %}
+                    {{ formModerador | crispy }} 
+                    <button type="submit" style="width: 100%" class="btn btn-primary">Registrarse</button>
+                </form> 
+            </div>        
+        </div>       
+    </div>
+</div>
+</div>-->
+
+<div class="container" style="margin-top: -31px;">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-8">
+            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-3 text-center">
+                    <div class="mb-md-5 mt-md-4 pb-3 text-center">
+                        <h2 class="fw-bold mb-2 text-uppercase">Registro de Moderador</h2>
+                        <form class="login" id="formularioLogin" action="" method="POST">
+                            {% csrf_token %}
+                            {{ formModerador | crispy }}
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn-19">
+                                    <div class="svg-wrapper-1">
+                                        <div class="svg-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                                <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <span>Registrar</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

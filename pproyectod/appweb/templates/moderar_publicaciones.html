@@ -1,0 +1,40 @@
+{% extends 'baseModerador.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido5 %}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Publicaciones Pendientes de Aprobación</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            {% if publicaciones %}
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    {% for post in publicaciones %}
+                        <div class="col">
+                            <div class="card h-100" style="background-color: #399db6;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ post.nombre_post }}</h5>
+                                    <p class="card-text">{{ post.descripcion_post }}</p>
+                                    {% if post.imagen_post %}
+                                        <img src="{{ post.imagen_post.url }}" alt="Imagen del Post" class="img-fluid mb-3" style="max-height: 150px; object-fit: cover;">
+                                    {% else %}
+                                        <p>No hay imagen disponible</p>
+                                    {% endif %}
+                                    <div class="d-flex justify-content-between">
+                                        <a href="{% url 'aprobar_publicacion' post.pk %}" class="btn-23">Aprobar</a>
+                                        <a href="{% url 'rechazar_publicacion' post.pk %}" class="btn-24">Rechazar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="alert alert-warning" role="alert">
+                    No hay publicaciones pendientes.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

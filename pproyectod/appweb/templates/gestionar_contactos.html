@@ -1,0 +1,66 @@
+{% extends 'baseModerador.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido5 %}
+
+
+<div class="container ">
+    <div class="row">
+        <div class="col-12">
+            <h2>Contactos Recibidos</h2>
+            <table class="table table-bordered table-striped " >
+                <thead class="text-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Mensaje</th>
+                        <th>Tipo de Contacto</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    {% for contacto in contactos %}
+                    <tr >
+                        <div >
+                            <td class="text-light">{{ contacto.nombre_contacto }}</td>
+                            <td class="text-light">{{ contacto.correo_contacto }}</td>
+                            <td class="text-light">{{ contacto.telefono_contacto }}</td>
+                            <td class="text-light">{{ contacto.mensaje_contacto }}</td>
+                            <td class="text-light">{{ contacto.tipos_contacto }}</td>
+                            <td class="text-light">{{ contacto.estado }}</td>
+                            <td class="text-light">
+                                <!-- Formulario para cambiar el estado -->
+                                <form method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="contacto_id" value="{{ contacto.id }}">
+                                    <button type="submit" name="estado" value="pendiente" class="btn-27">Pendiente</button>
+                                    <br><br>
+                                    <button type="submit" name="estado" value="revisado" class="btn-28">Revisado</button>
+                                </form>
+                            
+                            </td>
+                            <td>
+                                <!-- Formulario para eliminar -->
+                                <form method="post" style="display:inline;" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este contacto?');">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="contacto_id" value="{{ contacto.id }}">
+                                    <button class="btn-26" type="submit" name="eliminar" value="eliminar"><span class="text">Eliminar</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 
+                                        8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button>
+                                    
+                                
+                                </form>
+                            </td>
+                        </div>
+                    
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'baseAdmin.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido3 %}
+
+<div class="container mt-5">
+    <div class="text-center">
+    <h2 class="mt-4">Modificar Alumno</h2>  
+    </div>
+    
+    <form id="formAgregar" method="post" action="" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{ formA | crispy }}
+    <button type="submit" class="btn btn-primary">Modificar</button>
+    <button type="reset" class="btn btn-danger">Limpiar</button>
+
+    </form>
+</div>
+
+{% endblock %}
