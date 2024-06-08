@@ -2180,7 +2180,7 @@ button:hover .text {
 
 
 
-
+/* BOTON ENVIAR CORREO PARA RECUPERAR LA CONTRASEÑA */
 
 
 .box {
@@ -2192,9 +2192,9 @@ button:hover .text {
     --size: 3rem;
     position: relative;
     outline: 1px solid var(--clr-shadow__border);
-  }
-  
-  .btn-29 {
+}
+
+.btn-29 {
     font-weight: 600;
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
@@ -2204,10 +2204,10 @@ button:hover .text {
     cursor: pointer;
     color: var(--clr-text);
     text-shadow: 2px 0px var(--clr-shadow__border), 0px 2px var(--clr-shadow__border),
-    -2px 0px var(--clr-shadow__border), 0px -2px var(--clr-shadow__border);
-  }
-  
-  .space {
+        -2px 0px var(--clr-shadow__border), 0px -2px var(--clr-shadow__border);
+}
+
+.space {
     width: 100%;
     height: 100%;
     bottom: 0%;
@@ -2218,14 +2218,14 @@ button:hover .text {
     overflow: hidden;
     position: absolute;
     display: flex;
-    background: linear-gradient( 160deg, var(--clr-space), var(--clr-space-gr));
-  }
-  
-  .box:hover .space {
+    background: linear-gradient(160deg, var(--clr-space), var(--clr-space-gr));
+}
+
+.box:hover .space {
     opacity: 1;
-  }
-  
-  .star {
+}
+
+.star {
     height: 4rem;
     width: 0.3rem;
     transition: 0.5s;
@@ -2234,34 +2234,204 @@ button:hover .text {
     position: relative;
     background-color: var(--clr-star);
     animation: space-animation calc(0.1s * var(--i)) linear infinite;
-  }
-  
-  @keyframes space-animation {
+}
+
+@keyframes space-animation {
     0% {
-      transform: rotate(-30deg) translateY(calc(-52% * var(--i)));
+        transform: rotate(-30deg) translateY(calc(-52% * var(--i)));
     }
-  
+
     100% {
-      transform: rotate(-30deg) translateY(calc(52% * var(--i)));
+        transform: rotate(-30deg) translateY(calc(52% * var(--i)));
     }
-  }
-  
-  
-  
-  
-  
-  
-  
-  
+}
 
 
 
 
+/* CUBO RUBIC RECUPERAR CONTRASEÑA */
+
+.my-loader {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 100px auto;
+}
+
+.rubiks-cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: my-rotateCube 5s infinite linear;
+}
+
+.my-loader .face {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.my-loader .face.front {
+    transform: translateZ(100px);
+}
+
+.my-loader .face.back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.my-loader .face.left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.my-loader .face.right {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.my-loader .face.top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.my-loader .face.bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+.my-loader .cube {
+    width: calc(100% / 3);
+    height: calc(100% / 3);
+    box-sizing: border-box;
+    border: 1px solid #000;
+}
+
+@keyframes my-rotateCube {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* BOTON INICIAR SESION UNA VEZ SE ENVIA LA NUEVA CONTRASEÑA */
 
 
+.btn-30 {
+    padding: 1rem 2rem;
+    font-weight: 700;
+    background: rgb(255, 255, 255);
+    color: blueviolet;
+    border-radius: .5rem;
+    border-bottom: 2px solid blueviolet;
+    border-right: 2px solid blueviolet;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition-duration: 1s;
+    transition-property: border-top,
+        border-left,
+        border-bottom,
+        border-right,
+        box-shadow;
+}
 
+.btn-30:hover {
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    border-bottom: 2px solid rgb(238, 103, 238);
+    border-right: 2px solid rgb(238, 103, 238);
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
+}
 
+.planet {
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+    background: #fcc96b;
+    background: #fcc96b;
+    background: linear-gradient(180deg,
+            #fcc96b 0%,
+            #fcc96b 15%,
+            #f7ae01 15%,
+            #f7ae01 19%,
+            #fcc96b 19%,
+            #fcc96b 22%,
+            #f7ae01 22%,
+            #f7ae01 28%,
+            #fcc96b 28%,
+            #fcc96b 31%,
+            #fcc96b 33%,
+            #fcc96b 36%,
+            #f7ae01 36%,
+            #f7ae01 48%,
+            #fcc96b 48%,
+            #fcc96b 55%,
+            #f7ae01 55%,
+            #f7ae01 66%,
+            #fcc96b 66%,
+            #fcc96b 70%,
+            #f7ae01 70%,
+            #f7ae01 73%,
+            #fcc96b 73%,
+            #fcc96b 82%,
+            #f7ae01 82%,
+            #c7ba9d 86%,
+            #fcc96b 86%);
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25),
+        inset 8px -4px 6px rgba(199, 128, 0, 0.5),
+        inset -8px 4px 8px rgba(255, 235, 199, 0.5), inset 20px -5px 12px #f7ae01,
+        0 0 100px #ffffff59;
+    transform: rotateZ(-15deg);
+}
 
+.planet::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 16px solid #e1a519;
+    border-top-width: 0;
+    border-radius: 50%;
+    box-shadow: 0 -2px 0 #c18620;
+    animation: rings1 0.8s infinite linear;
+}
 
+.planet::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 8px solid #d48b0c;
+    border-top-width: 0;
+    border-radius: 50%;
+    box-shadow: 0 -2px 0 #b99309;
+    animation: rings2 0.8s infinite linear;
+}
 
+@keyframes rings1 {
+    0% {
+        transform: rotateX(65deg) rotateZ(0deg) scale(1.75);
+    }
 
+    100% {
+        transform: rotateX(65deg) rotateZ(360deg) scale(1.75);
+    }
+}
+
+@keyframes rings2 {
+    0% {
+        transform: rotateX(65deg) rotateZ(0deg) scale(1.7);
+    }
+
+    100% {
+        transform: rotateX(65deg) rotateZ(360deg) scale(1.7);
+    }
+}
