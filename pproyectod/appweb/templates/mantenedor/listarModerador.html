@@ -3,27 +3,6 @@
 {% load crispy_forms_tags %}
 {% block contenido3 %}
 
-<script>
-    function eliminarModerador(rut_Moderador)
-    {
-    Swal.fire({
-        "title": "Advertencia",
-        "text": "¿Esta seguro que desea eliminar a un Moderador?",
-        "icon": "question",
-        "showCancelButton": true,
-        "cancelButtonText": "No, cancelar",
-        "confirmButtonText":"Si, eliminar"
-    }).then(function(result){
-
-        if(result.isConfirmed)
-        {
-        window.location.href="/eliminar_moderador/"+rut_Moderador+"/";
-        }
-
-    })
-    }
-</script>
-
 <div class="container mt-5">
     <div class="text-center">
         <h2 class="mt-4">Lista de Moderadores</h2>  

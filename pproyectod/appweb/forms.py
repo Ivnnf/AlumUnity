@@ -64,14 +64,21 @@ class EquipoForm(forms.ModelForm):
         model = Equipo
         fields = ['nombreEquipo', 'descripcion', 'imagen']
 
+from django import forms
+from .models import Libros
+
 class LibrosForm(forms.ModelForm):
     class Meta:
         model = Libros
         fields = ['titulo', 'autor', 'descripcion', 'categoria', 'fecha_publicacion', 'archivo_libro', 'portada']
         widgets = {
             'descripcion': forms.Textarea(attrs={
-                'class': 'form-control mx-auto',  # Agregamos mx-auto para centrar
+                'class': 'form-control mx-auto',
                 'style': 'resize:none; width:230px; height:150px;',
+            }),
+            'fecha_publicacion': forms.DateInput(attrs={
+                'type': 'date',
+                'class': 'form-control'  # Puedes añadir otras clases de CSS aquí
             }),
         }
 

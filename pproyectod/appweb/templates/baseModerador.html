@@ -15,7 +15,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
         integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+    <script  src="{% static '../static/js/funciones.js' %}"></script>
     {% load static %}
     <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script> 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7/dist/sweetalert2.all.min.js"></script>
@@ -23,24 +24,11 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" type="text/css" href="{% static '../static/css/estilos.css' %}">
     <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
-    <style>
-        .container {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            color: rgb(252, 252, 252);
-        }
-        body {
-            background-color: #524e3f;
-        }
-        .navbar-custom {
-            background-color: #343a40;
-        }
-    </style>
 </head>
-<body>
+<body class="bodymoderador">
 <header>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-custommoderador">
+        <div class="container-fluid containermod">
             <a class="navbar-brand" href="{% url 'homeModerador' %}">
                 <img src="{% static '../static/imagenes/logoInicio.jpg' %}" class="d-block w-100 rounded-circle" style="width: 50px; height: 50px;">
             </a>

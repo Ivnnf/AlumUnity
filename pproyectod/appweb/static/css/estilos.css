@@ -8,6 +8,21 @@ body {
 }
 
 
+/* BASE MODERADOR */
+.containermod {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: rgb(252, 252, 252);
+}
+.bodymoderador {
+    background-color: #524e3f;
+}
+.navbar-custommoderador {
+    background-color: #343a40;
+}
+/* BASE MODERADOR */
+
+
 .container {
     width: 90%;
     margin: 0 auto;
@@ -277,7 +292,6 @@ body {
     overflow: auto;
 }
 
-
 /* TODO LOS EFECTOS DEL LOGIN */
 
 
@@ -356,6 +370,8 @@ body {
     -moz-transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in;
 }
+/*  BOTON LOGIN */
+
 
 /* BOTON ELIMINAR ADMIN */
 
@@ -435,6 +451,8 @@ body {
     /* Ajustado desde 3px */
     box-shadow: 0px 0px var(--main-color);
 }
+/* BOTON ELIMINAR ADMIN */
+
 
 
 
@@ -506,13 +524,13 @@ body {
 .btn-12:active::before {
     scale: 0.7;
 }
+/*BOTON MODIFICAR ADMIN*/
 
 
 
 
 
-
-/* boton descargar */
+/* BOTON DESCARGAR LIBRO ADMIN */
 
 .buttond {
     --main-focus: #2d8cf0;
@@ -589,9 +607,9 @@ body {
     /* Ajustado desde 3px */
     box-shadow: 0px 0px var(--main-color);
 }
+/* BOTON DESCARGAR LIBRO ADMIN */
 
 
-/* boton buscar admin */
 
 /* BOTON CERRAR SESION ADMIN */
 
@@ -633,6 +651,8 @@ body {
 .container15:active::before {
     filter: blur(0.2em);
 }
+/* BOTON CERRAR SESION ADMIN */
+
 
 /* BOTON SUBIR ARCHIVO ADMIN */
 
@@ -732,6 +752,8 @@ body {
 .btn-16:where(:hover, :focus) {
     color: #fff;
 }
+/* BOTON SUBIR ARCHIVO ADMIN */
+
 
 /* BOTON BUSCAR */
 
@@ -778,6 +800,8 @@ body {
     transform: rotate(250deg);
     transition-duration: 1.5s;
 }
+
+/* BOTON BUSCAR GENERAL */
 
 /* BOTON DESCARGAR BIBLIOTECA ALUMNO */
 
@@ -858,6 +882,9 @@ body {
     border-bottom-left-radius: 0px;
     transform: translate(-5px, 15px) rotate(45deg);
 }
+/* BOTON DESCARGAR BIBLIOTECA ALUMNO */
+
+
 
 /* formulario contacto */
 
@@ -915,13 +942,13 @@ body {
         transform: translateY(-0.1em);
     }
 }
+/* formulario contacto */
 
 
 
 
 
-
-
+/* Animations hamster REGISTRO DE USUARIOS */
 .wheel-and-hamster {
     --dur: 1s;
     position: relative;
@@ -1084,7 +1111,9 @@ body {
         linear-gradient(hsla(0, 0%, 55%, 0) 46.9%, hsl(0, 0%, 65%) 47% 52.9%, hsla(0, 0%, 65%, 0) 53%) 50% 50% / 99% 99% no-repeat;
 }
 
-/* Animations hamster REGISTRO DE USUARIOS */
+
+
+
 @keyframes hamster {
 
     from,
@@ -1264,9 +1293,6 @@ body {
     }
 }
 
-
-
-
 .animated-button {
     position: relative;
     display: flex;
@@ -1354,7 +1380,7 @@ body {
     height: 220px;
     opacity: 1;
 }
-
+/* Animations hamster REGISTRO DE USUARIOS */
 
 
 
@@ -1399,6 +1425,8 @@ body {
 .btn-20:hover::before {
     width: 250%;
 }
+/* BOTON REGISTRATE DEL FORMULARIO LOGIN */
+
 
 /* BOTON INICIAR SESION DEL FORMULARIO LOGIN */
 
@@ -1441,6 +1469,9 @@ body {
 .btn-21:hover::before {
     width: 250%;
 }
+/* BOTON INICIAR SESION DEL FORMULARIO LOGIN */
+
+
 
 /* BOTON COMENTAR PUBLICACION ALUMNO */
 
@@ -1617,6 +1648,9 @@ body {
         rotate: 1080deg;
     }
 }
+/* you gigante de la ventana publicacion*/
+
+
 
 /* BOTON PUBLICAR POST ALUMNO */
 
@@ -1662,6 +1696,8 @@ body {
     fill: white;
     transform: scale(1.2);
 }
+/* BOTON PUBLICAR POST ALUMNO */
+
 
 
 /* BOTON ELIMINAR CONTACTO MODERADOR */
@@ -1727,6 +1763,8 @@ button:hover .text {
 .btn-26:active .icon svg {
     transform: scale(0.8);
 }
+/* BOTON ELIMINAR CONTACTO MODERADOR */
+
 
 
 /* BOTON PENDIENTE CONTACTO MODERADOR */
@@ -1786,6 +1824,8 @@ button:hover .text {
 .btn-27:active {
     background: linear-gradient(32deg, #03a9f4, #d9f441, #ffeb3b, #03a9f4);
 }
+/* BOTON PENDIENTE CONTACTO MODERADOR */
+
 
 
 /* BOTON PENDIENTE CONTACTO MODERADOR */
@@ -1844,6 +1884,8 @@ button:hover .text {
 .btn-28:active {
     background: linear-gradient(32deg, #09c222, #000108, #f8e006, #156804);
 }
+/* BOTON PENDIENTE CONTACTO MODERADOR */
+
 
 
 /* ASTRONAUTA RECUPERAR CONTRASEÑA */
@@ -2175,7 +2217,7 @@ button:hover .text {
     border-radius: 0 30px 0 0;
     border-bottom: 10px solid #b0cfe4;
 }
-
+/* ASTRONAUTA RECUPERAR CONTRASEÑA */
 
 
 
@@ -2245,7 +2287,7 @@ button:hover .text {
         transform: rotate(-30deg) translateY(calc(52% * var(--i)));
     }
 }
-
+/* BOTON ENVIAR CORREO PARA RECUPERAR LA CONTRASEÑA */
 
 
 
@@ -2314,6 +2356,8 @@ button:hover .text {
         transform: rotateX(360deg) rotateY(360deg);
     }
 }
+/* CUBO RUBIC RECUPERAR CONTRASEÑA */
+
 
 /* BOTON INICIAR SESION UNA VEZ SE ENVIA LA NUEVA CONTRASEÑA */
 
@@ -2435,3 +2479,4 @@ button:hover .text {
         transform: rotateX(65deg) rotateZ(360deg) scale(1.7);
     }
 }
+/* BOTON INICIAR SESION UNA VEZ SE ENVIA LA NUEVA CONTRASEÑA */

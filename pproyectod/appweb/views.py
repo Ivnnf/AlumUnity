@@ -444,29 +444,40 @@ def chat_view(request):
 
 
 
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from .forms import LibrosForm
+from .models import Libros
+
 @login_required(login_url='/accounts/login/')
 def biblioteca(request):
+    # Obtener el valor de búsqueda de la barra de búsqueda
     buscar = request.GET.get('buscar')
+
+    # Verificar si el método de la solicitud es POST (lo cual indica que se está intentando subir un libro)
     if request.method == 'POST':
         form = LibrosForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('biblioteca')
+            form.save()  # Guardar el formulario si es válido
+            return redirect('biblioteca')  # Redirigir a la vista 'biblioteca' después de guardar el libro
     else:
         form = LibrosForm()
-    
+
     # Obtener todos los libros de la base de datos
     libros = Libros.objects.all()
 
+    # Filtrar los libros si se ha proporcionado un término de búsqueda
     if buscar:
         libros = libros.filter(titulo__icontains=buscar)
 
+    # Contexto a pasar a la plantilla
     context = {
         'formLibros': form,
         'libros': libros,
         'buscar': buscar,
     }
 
+    # Renderizar la plantilla con el contexto
     return render(request, 'Biblioteca.html', context)
 
 

@@ -17,39 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
     <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
     <script src="{% static 'js/iconos.js' %}"></script>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        main {
-            flex: 1;
-        }
-    </style>
-    <script>
-        function likePost(event, postId) {
-            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-            fetch(`/like/${postId}/`, {
-                method: 'GET',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'Content-Type': 'application/json',
-                },
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.querySelector(`#like-count-${postId}`).innerText = `${data.total_likes} likes`;
-                // Actualizar el estado del checkbox
-                const checkbox = document.querySelector(`#like-checkbox-${postId}`);
-                checkbox.checked = !checkbox.checked;
-            });
-        }
-    </script>
+    <script  src="{% static '../static/js/funciones.js' %}"></script>
     
 </head>
 
